@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "multi-dl"
+version = "0.1.0"
+description = "多平台流媒体视频下载 CLI（基于 yt-dlp）/ Multi-platform streaming video downloader CLI powered by yt-dlp"
+readme = "README.md"
+license = {text = "MIT"}
+authors = [{name = "aoyexiaoqi"}]
+requires-python = ">=3.9"
+dependencies = ["yt-dlp>=2024.1"]
+keywords = ["video", "download", "yt-dlp", "streaming", "cli", "subtitles"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: MIT License",
+  "Environment :: Console",
+  "Natural Language :: Chinese (Simplified)",
+  "Topic :: Multimedia :: Video",
+]
+
+[project.optional-dependencies]
+test = ["pytest>=7", "pytest-cov"]
+
+[project.scripts]
+multi-dl = "multi_dl.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/aoyexiaoqi/multi-dl"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
